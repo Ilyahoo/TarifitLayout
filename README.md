@@ -44,7 +44,7 @@ A file contain the characters used in latin Tarifit (Riffian, Rif) language Base
   ```bash
     sudo dpkg-reconfigure xkb-data
   ```
-  7. now logout and when you log back, go to `settings > Region and language` (or where ever your keyboard perference is) and in input sources click on `+` button and search for `Tarifit, and add it.
+  7. now logout and when you log back, go to `settings > Region and language` (or where ever your keyboard perference is) and in input sources click on `+` button and search for `Tarifit`, and add it.
 
 ## Authors
 
