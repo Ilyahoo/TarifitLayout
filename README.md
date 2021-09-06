@@ -1,52 +1,56 @@
-# TarifitLayout
-A file contain the characters used in latin Tarifit (Riffian, Rif) language Based on UK layout.
+# Tarifit layout
+
+Tarifit layout US based keyboard. 
+
+This layout is tested on Ubuntu 21.04 Desktop machine.
 
 
-## Instructions
-  1. Clone TarifitLayout repository 
-  ```bash
-    git clone https://github.com/Ilyahoo/TarifitLayout.git
-    cd TarifitLayout/
-  ```
-  2. copy `rif` file to xkb symbols folder
-  ```bash
-     sudo cp rif /usr/share/X11/xkb/symbols/
-  ```
-  3. make backup of layout declaration
-  ```bash
-    sudo cp /usr/share/X11/xkb/rules/evdev.xml /usr/share/X11/xkb/rules/evdev.xml.bak
-  ```
-  4. Add the new layout declaration to /usr/share/X11/xkb/rules/evdev.xml (or copy `evdev.xml` file and paste it there)
-  ```bash
-    sudo gedit /usr/share/X11/xkb/rules/evdev.xml
-  ```
-   add this somewhere in `English` section
-```xml
-...
-<layout>
-      <configItem>
-        <name>rif</name>
-        <shortDescription>rif</shortDescription>
-        <description>Tarifit</description>
-        <languageList>
-          <iso639Id>rif</iso639Id>
-        </languageList>
-      </configItem>
-    </layout>
-...
+## Installation
+
+
+
+1. Clone `TarifitLayout` repository
+
+```bash
+git clone https://github.com/Ilyahoo/TarifitLayout.git
+cd TarifitLayout/
 ```
-  5. Add keyboard indicator (tested on Ubuntu)
-  ```bash
-    sudo cp indicator-keyboard-Rif.svg.light usr/share/icons/ubuntu-mono-light/status/22/indicator-keyboard-Rif.svg
-    sudo cp indicator-keyboard-Rif.svg.dark usr/share/icons/ubuntu-mono-dark/status/22/indicator-keyboard-Rif.svg
-  ```
-  6. Confirme changes.
-  ```bash
-    sudo dpkg-reconfigure xkb-data
-  ```
-  7. now logout and when you log back, go to `settings > Region and language` (or where ever your keyboard perference is) and in input sources click on `+` button and search for `Tarifit`, and add it.
 
-## Authors
+2. Copy the the `ma` file to `xkb/symbols` folder and `evdev.xml` to `xkb/rules` folder.
 
-* **Ilyahoo Proshel** - *Initial work* - [Ilyahoo](https://github.com/Ilyahoo)
+```bash
+sudo cp ma /usr/share/X11/xkb/symbols/
+sudo cp evdev.xml /usr/share/X11/xkb/rules/evdev.xml
+```
 
+3. Copy the keyboard inducator to ubuntu theme folder.
+
+```bash
+sudo cp light.svg /usr/share/icons/ubuntu-mono-light/status/22/indicator-keyboard-Rif.svg
+sudo cp dark.svg /usr/share/icons/ubuntu-mono-dark/status/22/indicator-keyboard-Rif.svg
+```
+
+4. Reconfigure the xkb data to apply the new modifications.
+
+```bash
+sudo dpkg-reconfigure xkb-data
+```
+5. Now logout and when you log back in, go to `settings > Region and language` (or wherever your keyboard preference is) and in input sources click on `+` button and search for `Tarifit` or `rif`, and add it.
+
+## License
+    Copyright (C) 2021  Ilyahoo Proshel
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+**Ilyahoo Proshel** - *Initial work* - [iPshel](https://ipshel.com)
